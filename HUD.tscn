@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dlf3dxxgh2m2y"]
+
+[ext_resource type="Script" uid="uid://dfdgt0l4xivu5" path="res://canvas_layer.gd" id="1_tg4cr"]
+[ext_resource type="FontFile" uid="uid://fdl4evh7q1vt" path="res://fonts/Xolonium-Regular.ttf" id="2_37rai"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_efote"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_vow1y"]
+events = [SubResource("InputEventAction_efote")]
+
+[node name="HUD" type="CanvasLayer" unique_id=1419943759]
+script = ExtResource("1_tg4cr")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=406113708]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.5
+offset_right = 22.5
+offset_bottom = 78.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_37rai")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="Message" type="Label" parent="." unique_id=1413332079]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -39.0
+offset_right = 240.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_37rai")
+theme_override_font_sizes/font_size = 64
+text = "Dodge!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="." unique_id=1041102557]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -140.0
+offset_right = 100.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_37rai")
+theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_vow1y")
+text = "Start"
+
+[node name="MessageTimer" type="Timer" parent="." unique_id=101072802]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
