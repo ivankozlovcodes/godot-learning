@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://cpj6kaicnsvky"]
+
+[ext_resource type="FontFile" uid="uid://u3geaxmkhiqk" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_y77lc"]
+
+[resource]
+Label/fonts/font = ExtResource("1_y77lc")

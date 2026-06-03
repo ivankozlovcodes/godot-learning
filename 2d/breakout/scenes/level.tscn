@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dv0oba3jv3st2"]
+
+[ext_resource type="Script" uid="uid://e1j73onri865" path="res://scripts/level.gd" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://be6m7brci0ic2" path="res://scenes/brick.tscn" id="2_w7c3h"]
+
+[node name="Level" type="Node2D" unique_id=1812100347]
+script = ExtResource("1_2q6dc")
+log_level = null
+grid_size = null
+brick_size = null
+level_x_side_padding_percent = null
+level_y_bottom_padding_percent = null
+padding = null
+justify_padding = null
+brick_scene = ExtResource("2_w7c3h")

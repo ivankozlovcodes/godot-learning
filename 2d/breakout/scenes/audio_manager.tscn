@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dat72csa1x48a"]
+
+[ext_resource type="Script" uid="uid://eqfb84ts2x43" path="res://scripts/audio/audio_manager.gd" id="1_8qd8g"]
+[ext_resource type="AudioStream" uid="uid://gcaqi7w6eh06" path="res://assets/ULTIMATE-8BIT-SFX-LIBRARY-VOL1/8bit-jump2.wav" id="2_064dn"]
+[ext_resource type="AudioStream" uid="uid://cpkbx3gc6w1a5" path="res://assets/brackeys_platformer_assets/sounds/coin.wav" id="2_kq7b2"]
+[ext_resource type="AudioStream" uid="uid://cid7ud4r0wo55" path="res://assets/brackeys_platformer_assets/sounds/tap.wav" id="2_liach"]
+[ext_resource type="AudioStream" uid="uid://v1e66vbneisl" path="res://assets/brackeys_platformer_assets/sounds/explosion.wav" id="3_02gw7"]
+[ext_resource type="AudioStream" uid="uid://g6cavj0ho5je" path="res://assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="3_064dn"]
+[ext_resource type="AudioStream" uid="uid://c3pff8rex15l4" path="res://assets/ULTIMATE-8BIT-SFX-LIBRARY-VOL1/8bit-pickup2.wav" id="3_ic5jq"]
+[ext_resource type="AudioStream" uid="uid://bxl5mps4h7l2d" path="res://assets/brackeys_platformer_assets/sounds/hurt.wav" id="4_ujhup"]
+[ext_resource type="AudioStream" uid="uid://b2b6vh53l2aik" path="res://assets/brackeys_platformer_assets/sounds/jump.wav" id="5_064dn"]
+[ext_resource type="AudioStream" uid="uid://i2qiw8roabp2" path="res://assets/brackeys_platformer_assets/sounds/power_up.wav" id="6_ic5jq"]
+
+[node name="AudioManager" type="Node" unique_id=1835746852]
+script = ExtResource("1_8qd8g")
+
+[node name="ResourcePreloader" type="ResourcePreloader" parent="." unique_id=1285487526]
+resources = [PackedStringArray("8bit-jump2", "8bit-pickup2", "coin", "explosion", "hurt", "jump", "power_up", "tap"), [ExtResource("2_064dn"), ExtResource("3_ic5jq"), ExtResource("2_kq7b2"), ExtResource("3_02gw7"), ExtResource("4_ujhup"), ExtResource("5_064dn"), ExtResource("6_ic5jq"), ExtResource("2_liach")]]
+
+[node name="background" type="AudioStreamPlayer2D" parent="." unique_id=1477329131]
+stream = ExtResource("3_064dn")
+volume_db = -7.679
+pitch_scale = 0.99
+attenuation = 0.87055254
+parameters/looping = true

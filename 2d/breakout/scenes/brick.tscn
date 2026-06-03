@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://be6m7brci0ic2"]
+
+[ext_resource type="Script" uid="uid://ya0u16aqk7l6" path="res://scripts/brick.gd" id="1_5l4w1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w5h4"]
+size = Vector2(11, 11)
+
+[node name="Brick" type="StaticBody2D" unique_id=1000568367]
+position = Vector2(284, 253)
+script = ExtResource("1_5l4w1")
+item_chance = null
+brick_size = Vector2(10, 10)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=353245292]
+shape = SubResource("RectangleShape2D_0w5h4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=71114671]
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+color = Color(0.9607843, 0.9607843, 0.8627451, 1)
+
+[node name="HP" type="Label" parent="." unique_id=880046801]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+text = "100.0"

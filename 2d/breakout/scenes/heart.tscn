@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b6t5p6rthxxaj"]
+
+[ext_resource type="Texture2D" uid="uid://cceawncqscnop" path="res://assets/heart2.png" id="1_v30as"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahhtf"]
+atlas = ExtResource("1_v30as")
+region = Rect2(23, 19, 21, 18)
+
+[sub_resource type="Gradient" id="Gradient_ahhtf"]
+offsets = PackedFloat32Array(0, 0.394822, 0.7411003, 1)
+colors = PackedColorArray(0.9843137, 0, 0, 1, 0.9843137, 0, 0, 0.7294118, 0.9998743, 0.32427728, 0.2591137, 0.7294118, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oo0fn"]
+gradient = SubResource("Gradient_ahhtf")
+
+[sub_resource type="Curve" id="Curve_5ysmq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.52265865, 0.9924419), 0.0, 0.0, 0, 0, Vector2(0.8610272, 0.094132066), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6fi6k"]
+curve = SubResource("Curve_5ysmq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oo0fn"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_min = 9.01
+initial_velocity_max = 94.79
+angular_velocity_min = -610.23
+angular_velocity_max = 472.55997
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -100.0
+radial_accel_max = -100.0
+scale_min = 2.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_6fi6k")
+color_ramp = SubResource("GradientTexture1D_oo0fn")
+anim_speed_min = 2.6
+anim_speed_max = 2.6
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 0.0
+turbulence_noise_speed_random = 2.44
+
+[node name="heart" type="TextureRect" unique_id=1635848308]
+texture = SubResource("AtlasTexture_ahhtf")
+
+[node name="breakParticles" type="GPUParticles2D" parent="." unique_id=736718452]
+position = Vector2(10.5, 8)
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_oo0fn")
